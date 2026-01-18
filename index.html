@@ -1,254 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STEM Works | Robotics & Engineering Programs</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STEM Works | Robotics & Engineering Programs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1e90ff;
+    --dark: #0f172a;
+    --dark-grey: #1e293b;
+    --light: #f8fafc;
+    --accent: #38bdf8;
+  }
 
-  <style>
-    :root {
-      --blue: #1e90ff;
-      --dark: #0f172a;
-      --dark-grey: #1e293b;
-      --light: #f8fafc;
-      --accent: #38bdf8;
-    }
+  * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+  body {background: linear-gradient(180deg, var(--dark), #020617); color: var(--light); line-height:1.6;}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  header {padding: 1.5rem 5%; display:flex; justify-content:space-between; align-items:center;}
+  header h1 {color: var(--accent); font-size:1.8rem; font-weight:700;}
+  nav a {margin-left:1.5rem; color: var(--light); text-decoration:none; font-weight:400; transition: color 0.3s;}
+  nav a:hover {color: var(--accent);}
 
-    body {
-      background: linear-gradient(180deg, var(--dark), #020617);
-      color: var(--light);
-      line-height: 1.6;
-    }
+  .hero {padding:5rem 5%; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;}
+  .hero h2 {font-size:3rem; font-weight:700; background:linear-gradient(90deg,var(--blue),var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+  .hero p {margin:1.5rem 0; color:#cbd5f5; max-width:500px;}
+  .btn {display:inline-block; padding:0.9rem 1.8rem; background:linear-gradient(135deg,var(--blue),var(--accent)); color:#000; font-weight:600; border-radius:8px; text-decoration:none; cursor:pointer; transition: transform 0.2s, box-shadow 0.2s;}
+  .btn:hover {transform: translateY(-3px); box-shadow:0 10px 25px rgba(56,189,248,0.4);}
 
-    header {
-      padding: 1.5rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  section {padding:4rem 5%;}
+  .section-title {font-size:2.2rem; margin-bottom:1.5rem; color: var(--accent);}
+  .cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem;}
+  .card {background:linear-gradient(180deg,var(--dark-grey),#020617); padding:2rem; border-radius:15px; border:1px solid rgba(56,189,248,0.15); transition: transform 0.3s, box-shadow 0.3s; cursor:pointer;}
+  .card:hover {transform: translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.6);}
+  .card h3 {color: var(--blue); margin-bottom:0.8rem;}
+  .card p {color:#cbd5f5; font-size:0.95rem;}
 
-    header h1 {
-      color: var(--accent);
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
+  .contact {text-align:center; background: linear-gradient(135deg,#020617,var(--dark-grey)); border-top:1px solid rgba(56,189,248,0.2);}
 
-    nav a {
-      margin-left: 1.5rem;
-      color: var(--light);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
+  footer {text-align:center; padding:1.5rem; font-size:0.9rem; color:#94a3b8;}
 
-    nav a:hover {
-      color: var(--accent);
-    }
+  /* Modal Styles */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; width: 100%; height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+  }
 
-    .hero {
-      padding: 5rem 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
+  .modal-content {
+    background: var(--dark-grey); 
+    margin: 5% auto; 
+    padding: 2rem; 
+    border: 1px solid var(--accent);
+    width: 80%; 
+    max-width: 800px; 
+    border-radius: 15px;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 
-    .hero h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--blue), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      margin: 1.5rem 0;
-      color: #cbd5f5;
-      max-width: 500px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 1.8rem;
-      background: linear-gradient(135deg, var(--blue), var(--accent));
-      color: #000;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
-    }
-
-    section {
-      padding: 4rem 5%;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: linear-gradient(180deg, var(--dark-grey), #020617);
-      padding: 2rem;
-      border-radius: 15px;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    }
-
-    .card h3 {
-      color: var(--blue);
-      margin-bottom: 0.8rem;
-    }
-
-    .card p {
-      color: #cbd5f5;
-      font-size: 0.95rem;
-    }
-
-    .contact {
-      text-align: center;
-      background: linear-gradient(135deg, #020617, var(--dark-grey));
-      border-top: 1px solid rgba(56, 189, 248, 0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-  </style>
+  .modal-content img {width: 200px; border-radius: 15px;}
+  .modal-content .text {flex:1; color:#cbd5f5;}
+  .close {color: #fff; float:right; font-size:28px; font-weight:bold; cursor:pointer;}
+  .close:hover {color: var(--accent);}
+  @media(max-width:700px) {
+    .hero {grid-template-columns:1fr;}
+    .modal-content {flex-direction:column; align-items:center; text-align:center;}
+    .modal-content img {width:80%;}
+  }
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>STEM Works</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#program">Program</a>
-      <a href="#why">Why Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>STEM Works</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#program">Program</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
+<section class="hero">
+  <div>
+    <h2>Building the Next Generation of Engineers</h2>
+    <p>Hands-on robotics and engineering programs for middle and high school students. Learn by building, coding, and competing.</p>
+    <button class="btn" onclick="openModal('joinModal')">Join the Program</button>
+  </div>
+  <div>
+    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Robotics" style="width:100%; border-radius: 20px; box-shadow:0 25px 50px rgba(0,0,0,0.7);">
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About STEM Works</h2>
+  <p style="max-width: 800px; color:#cbd5f5;">STEM Works is an education initiative focused on inspiring students through real engineering challenges. Our programs combine mechanical design, electronics, and programming in a fun, competitive environment.</p>
+</section>
+
+<section id="program">
+  <h2 class="section-title">Our 6-Week Robotics Program</h2>
+  <div class="cards">
+    <div class="card" onclick="openModal('week1Modal')"><h3>Week 1–2</h3><p>Intro to engineering, electronics, and robot fundamentals.</p></div>
+    <div class="card" onclick="openModal('week2Modal')"><h3>Week 3–4</h3><p>Hands-on robot building, wiring, and ESP32 programming.</p></div>
+    <div class="card" onclick="openModal('week3Modal')"><h3>Week 5</h3><p>Testing, debugging, and strategy development.</p></div>
+    <div class="card" onclick="openModal('week4Modal')"><h3>Week 6</h3><p>Final competition day with prizes and awards.</p></div>
+  </div>
+</section>
+
+<section id="why">
+  <h2 class="section-title">Why STEM Works?</h2>
+  <div class="cards">
+    <div class="card" onclick="openModal('why1Modal')"><h3>Hands-On Learning</h3><p>Students learn by doing — not just watching.</p></div>
+    <div class="card" onclick="openModal('why2Modal')"><h3>Real Engineering Tools</h3><p>Use microcontrollers, motors, CAD, and real-world workflows.</p></div>
+    <div class="card" onclick="openModal('why3Modal')"><h3>Teamwork & Competition</h3><p>Build collaboration, problem-solving, and leadership skills.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Get Involved</h2>
+  <p style="color:#cbd5f5; max-width:600px; margin:0 auto 2rem;">Interested in joining a program, partnering with us, or volunteering? Reach out today.</p>
+  <button class="btn" onclick="openModal('contactModal')">Contact STEM Works</button>
+</section>
+
+<footer>© 2026 STEM Works. All rights reserved.</footer>
+
+<!-- MODALS -->
+<!-- Join Program Modal -->
+<div id="joinModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('joinModal')">&times;</span>
     <div>
-      <h2>Building the Next Generation of Engineers</h2>
-      <p>
-        STEM Works delivers hands-on robotics and engineering programs for
-        middle and high school students. Learn by building, coding, and competing.
-      </p>
-      <a href="#contact" class="btn">Join the Program</a>
+      <img src="https://via.placeholder.com/200x200.png?text=QR+Code" alt="QR Code">
+      <p style="margin-top:10px;"><a href="#" target="_blank" style="color:var(--accent);">Google Form Link</a></p>
     </div>
-    <div>
-      <!-- Placeholder visual -->
-      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e"
-           alt="Robotics"
-           style="width:100%; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.7);">
+    <div class="text">
+      <p>Sign up for our program via the Google Form link. You will receive an email in the following weeks about our workshop schedule.</p>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section id="about">
-    <h2 class="section-title">About STEM Works</h2>
-    <p style="max-width: 800px; color:#cbd5f5;">
-      STEM Works is an education initiative focused on inspiring students through
-      real engineering challenges. Our programs combine mechanical design,
-      electronics, and programming in a fun, competitive environment.
-    </p>
-  </section>
+<!-- Week Modals -->
+<div id="week1Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('week1Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Week+1-2" alt="Week 1-2">
+    <div class="text"><p>Week 1-2 activities: Introduction to engineering principles, basic electronics, coding fundamentals, and simple robot assembly exercises.</p></div>
+  </div>
+</div>
 
-  <section id="program">
-    <h2 class="section-title">Our 6-Week Robotics Program</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Week 1–2</h3>
-        <p>Intro to engineering, electronics, and robot fundamentals.</p>
-      </div>
-      <div class="card">
-        <h3>Week 3–4</h3>
-        <p>Hands-on robot building, wiring, and ESP32 programming.</p>
-      </div>
-      <div class="card">
-        <h3>Week 5</h3>
-        <p>Testing, debugging, and strategy development.</p>
-      </div>
-      <div class="card">
-        <h3>Week 6</h3>
-        <p>Final competition day with prizes and awards.</p>
-      </div>
+<div id="week2Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('week2Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Week+3-4" alt="Week 3-4">
+    <div class="text"><p>Week 3-4 activities: Hands-on robot building, wiring, ESP32 programming, and debugging practice.</p></div>
+  </div>
+</div>
+
+<div id="week3Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('week3Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Week+5" alt="Week 5">
+    <div class="text"><p>Week 5 activities: Testing and debugging, strategy development, teamwork exercises, and preparing robots for competition.</p></div>
+  </div>
+</div>
+
+<div id="week4Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('week4Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Week+6" alt="Week 6">
+    <div class="text"><p>Week 6 activities: Final competition day, evaluation of performance, awards, and celebration of learning achievements.</p></div>
+  </div>
+</div>
+
+<!-- Why STEM Works Modals -->
+<div id="why1Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('why1Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Hands-On" alt="Hands-On Learning">
+    <div class="text"><p>Students learn by building, experimenting, and testing real robots rather than just reading or watching videos.</p></div>
+  </div>
+</div>
+
+<div id="why2Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('why2Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Engineering+Tools" alt="Engineering Tools">
+    <div class="text"><p>Use real-world tools like microcontrollers, stepper motors, CAD software, and sensors to gain hands-on experience.</p></div>
+  </div>
+</div>
+
+<div id="why3Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('why3Modal')">&times;</span>
+    <img src="https://via.placeholder.com/200x150.png?text=Teamwork" alt="Teamwork & Competition">
+    <div class="text"><p>Work in teams to build projects, solve problems, and compete, enhancing collaboration and leadership skills.</p></div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('contactModal')">&times;</span>
+    <div class="text">
+      <p>Email us at: <a href="mailto:stemworks@gmail.com" style="color:var(--accent);">stemworks@gmail.com</a></p>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section id="why">
-    <h2 class="section-title">Why STEM Works?</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Hands-On Learning</h3>
-        <p>Students learn by doing — not just watching.</p>
-      </div>
-      <div class="card">
-        <h3>Real Engineering Tools</h3>
-        <p>Use microcontrollers, motors, CAD, and real-world workflows.</p>
-      </div>
-      <div class="card">
-        <h3>Teamwork & Competition</h3>
-        <p>Build collaboration, problem-solving, and leadership skills.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2 class="section-title">Get Involved</h2>
-    <p style="color:#cbd5f5; max-width: 600px; margin: 0 auto 2rem;">
-      Interested in joining a program, partnering with us, or volunteering?
-      Reach out today.
-    </p>
-    <a href="mailto:stemworks@gmail.com" class="btn">Contact STEM Works</a>
-  </section>
-
-  <footer>
-    © 2026 STEM Works. All rights reserved.
-  </footer>
+<script>
+  function openModal(id){
+    document.getElementById(id).style.display='block';
+  }
+  function closeModal(id){
+    document.getElementById(id).style.display='none';
+  }
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if(event.target == modal){
+        modal.style.display = 'none';
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
