@@ -51,28 +51,70 @@
     background-color: rgba(0,0,0,0.8);
   }
 
-.modal-content {
+  .modal-content {
     background: var(--dark-grey); 
     margin: 5% auto; 
     padding: 2rem; 
     border: 1px solid var(--accent);
-    width: 90%;          /* make it wider */
-    max-width: 900px;    /* bigger than before */
+    width: 90%;          
+    max-width: 900px;    
     border-radius: 15px;
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    justify-content: center; /* centers items inside modal */
+    justify-content: center; 
     align-items: flex-start;
-}
+  }
 
-.modal-content img {
-    max-width: 45%;    /* image takes up almost half the modal */
-    height: auto;      /* preserves aspect ratio */
+  .modal-content img {
+    max-width: 45%;    
+    height: auto;      
     border-radius: 15px;
     object-fit: contain;
-}
+  }
 
+  /* QR Code specific modal styling */
+  .join-modal-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+  .join-modal-content .qr-container {
+    flex: 0 0 150px; /* smaller QR code width */
+    text-align: center;
+  }
+
+  .join-modal-content .qr-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .join-modal-content .text {
+    flex: 1;
+    color: #cbd5f5;
+  }
+
+  @media (max-width: 700px) {
+    .hero {grid-template-columns:1fr;}
+    .modal-content {flex-direction:column; align-items:center; text-align:center;}
+    .modal-content img {width:80%;}
+    .join-modal-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .join-modal-content .qr-container {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+    .join-modal-content .text {
+        width: 100%;
+    }
+  }
 </style>
 </head>
 
@@ -112,7 +154,6 @@
   </div>
 </section>
 
-
 <section id="program">
   <h2 class="section-title">Our 6-Week Robotics Program</h2>
   <div class="cards">
@@ -140,11 +181,10 @@
 
 <footer>© 2026 STEM Works. All rights reserved.</footer>
 
-
-   <!-- Join Program Modal -->
+<!-- Join Program Modal -->
 <div id="joinModal" class="modal">
-  <div class="modal-content">
-    <!-- Removed the X button for cleaner look -->
+  <div class="modal-content join-modal-content">
+    <!-- QR code on the left -->
     <div class="qr-container">
       <img src="qr-code (15).png" alt="QR Code">
       <p style="margin-top:10px;">
@@ -153,6 +193,7 @@
         </a>
       </p>
     </div>
+    <!-- Text on the right -->
     <div class="text">
       <p>
         Sign up for our program through the Google Form link or by scanning the QR code. 
@@ -165,7 +206,6 @@
 <!-- Week Modals -->
 <div id="week1Modal" class="modal">
   <div class="modal-content">
-    
     <img src="Screenshot 2026-01-18 160720.jpg" alt="Week 1-2" style="max-width:600px; height:auto; border-radius:15px;">
     <div class="text"><p>
         During Weeks 1-2, students are introduced to our <strong>Game Manual</strong>, which explains what their robots should be able to accomplish.
@@ -180,7 +220,6 @@
 
 <div id="week2Modal" class="modal">
   <div class="modal-content">
- 
     <img src="Screenshot 2026-01-18 160758.jpg" alt="Week 3-4">
     <div class="text">  
       <p>
@@ -196,7 +235,6 @@
 
 <div id="week3Modal" class="modal">
   <div class="modal-content">
- 
     <img src="Screenshot 2026-01-18 161028.jpg" alt="Week 5">
     <div class="text"> 
       <p>
@@ -211,7 +249,6 @@
 
 <div id="week4Modal" class="modal">
   <div class="modal-content">
-   
     <img src="Screenshot 2026-01-18 160855.jpg" alt="Week 6">
     <div class="text">
       <p>Week 6 activities: Final competition day, evaluation of performance, awards, and celebration of learning achievements.</p>
@@ -219,12 +256,9 @@
   </div>
 </div>
 
-
 <!-- Why STEM Works Modals -->
 <div id="why1Modal" class="modal">
   <div class="modal-content">
-    
- 
     <div class="text"> <p>
         We believe students best learn while participating in <strong>hands-on activities</strong> rather than watching a lecturer explain concepts through slides on a screen. 
         It is our mission to bring STEM and robotics education to all students in an <strong>accessible and affordable</strong> way.
@@ -234,21 +268,16 @@
 
 <div id="why2Modal" class="modal">
   <div class="modal-content">
-   
-   
     <div class="text"><p>Use real-world tools such as ESP32 microcontrollers, DC & Servo motors, CAD software (OnShape), and PS4 controllers to gain real engineering experiences.</p></div>
   </div>
 </div>
 
 <div id="why3Modal" class="modal">
   <div class="modal-content">
-    
-  
     <div class="text"><p>Work in teams to build projects, solve problems, and compete, enhancing collaboration and leadership skills.</p></div>
   </div>
 </div>
 
-<!-- Contact Modal -->
 <!-- Contact Modal -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
@@ -266,7 +295,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
   function openModal(id){
