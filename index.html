@@ -51,28 +51,28 @@
     background-color: rgba(0,0,0,0.8);
   }
 
-  .modal-content {
+.modal-content {
     background: var(--dark-grey); 
     margin: 5% auto; 
     padding: 2rem; 
     border: 1px solid var(--accent);
-    width: 80%; 
-    max-width: 800px; 
+    width: 90%;          /* make it wider */
+    max-width: 900px;    /* bigger than before */
     border-radius: 15px;
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-  }
+    justify-content: center; /* centers items inside modal */
+    align-items: flex-start;
+}
 
-  .modal-content img {width: 200px; border-radius: 15px;}
-  .modal-content .text {flex:1; color:#cbd5f5;}
-  .close {color: #fff; float:right; font-size:28px; font-weight:bold; cursor:pointer;}
-  .close:hover {color: var(--accent);}
-  @media(max-width:700px) {
-    .hero {grid-template-columns:1fr;}
-    .modal-content {flex-direction:column; align-items:center; text-align:center;}
-    .modal-content img {width:80%;}
-  }
+.modal-content img {
+    max-width: 45%;    /* image takes up almost half the modal */
+    height: auto;      /* preserves aspect ratio */
+    border-radius: 15px;
+    object-fit: contain;
+}
+
 </style>
 </head>
 
@@ -173,7 +173,7 @@
 <div id="week2Modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('week2Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 160758.jpg" alt="Week 3-4" style="max-width:600px; height:auto; border-radius:15px;">
+    <img src="Screenshot 2026-01-18 160758.jpg" alt="Week 3-4">
     <div class="text">  
       <p>
         During Weeks 3-4, students receive the <strong>3D printed models</strong> of the robots they designed in the previous week. 
@@ -189,7 +189,7 @@
 <div id="week3Modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('week3Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 161028.jpg" alt="Week 5" style="max-width:600px; height:auto; border-radius:15px;">
+    <img src="Screenshot 2026-01-18 161028.jpg" alt="Week 5">
     <div class="text"> 
       <p>
         Week 5 is focused on <strong>programming the robots</strong>. Students start with a <strong>test code</strong> and must iterate it to match their individual wiring and robot configurations, since each robot is customized.
@@ -204,7 +204,7 @@
 <div id="week4Modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('week4Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 160855.jpg" alt="Week 6" style="max-width:600px; height:auto; border-radius:15px;">
+    <img src="Screenshot 2026-01-18 160855.jpg" alt="Week 6">
     <div class="text">
       <p>Week 6 activities: Final competition day, evaluation of performance, awards, and celebration of learning achievements.</p>
     </div>
