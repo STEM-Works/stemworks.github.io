@@ -91,7 +91,7 @@
 <section class="hero">
   <div>
     <h2>Building the Next Generation of Engineers</h2>
-    <p>Hands-on robotics and engineering programs for middle and high school students. Learn by building, coding, and competing.</p>
+    <p>Hands-on robotics and engineering programs for middle and high school students. Learn by building, coding, and competing. Brought to you by students in the Department of Engineering and Architectural Science at TMU</p>
     <button class="btn" onclick="openModal('joinModal')">Join the Program</button>
   </div>
   <div>
@@ -107,19 +107,19 @@
 <section id="program">
   <h2 class="section-title">Our 6-Week Robotics Program</h2>
   <div class="cards">
-    <div class="card" onclick="openModal('week1Modal')"><h3>Week 1–2</h3><p>Intro to engineering, electronics, and robot fundamentals.</p></div>
-    <div class="card" onclick="openModal('week2Modal')"><h3>Week 3–4</h3><p>Hands-on robot building, wiring, and ESP32 programming.</p></div>
+    <div class="card" onclick="openModal('week1Modal')"><h3>Week 1–2</h3><p>Intro to engineering, electronics, and CAD fundamentals.</p></div>
+    <div class="card" onclick="openModal('week2Modal')"><h3>Week 3–4</h3><p>Hands on robot building, wiring, and ESP32 programming.</p></div>
     <div class="card" onclick="openModal('week3Modal')"><h3>Week 5</h3><p>Testing, debugging, and strategy development.</p></div>
-    <div class="card" onclick="openModal('week4Modal')"><h3>Week 6</h3><p>Final competition day with prizes and awards.</p></div>
+    <div class="card" onclick="openModal('week4Modal')"><h3>Week 6</h3><p>Final competition day.</p></div>
   </div>
 </section>
 
 <section id="why">
   <h2 class="section-title">Why STEM Works?</h2>
   <div class="cards">
-    <div class="card" onclick="openModal('why1Modal')"><h3>Hands-On Learning</h3><p>Students learn by doing — not just watching.</p></div>
-    <div class="card" onclick="openModal('why2Modal')"><h3>Real Engineering Tools</h3><p>Use microcontrollers, motors, CAD, and real-world workflows.</p></div>
-    <div class="card" onclick="openModal('why3Modal')"><h3>Teamwork & Competition</h3><p>Build collaboration, problem-solving, and leadership skills.</p></div>
+    <div class="card" onclick="openModal('why1Modal')"><h3>Hands-On Learning</h3><p>Students learn by doing, not just watching.</p></div>
+    <div class="card" onclick="openModal('why2Modal')"><h3>Real Engineering Tools</h3><p>Use microcontrollers, motors and CAD to build your own unique robot.</p></div>
+    <div class="card" onclick="openModal('why3Modal')"><h3>Teamwork & Competition</h3><p>Build collaboration, critical thinking, and leadership skills.</p></div>
   </div>
 </section>
 
@@ -141,7 +141,7 @@
       <p style="margin-top:10px;"><a href="#" target="_blank" style="color:var(--accent);">Google Form Link</a></p>
     </div>
     <div class="text">
-      <p>Sign up for our program via the Google Form link. You will receive an email in the following weeks about our workshop schedule.</p>
+      <p>Sign up for our program through the Google Form link or by scanning the QR code. You will receive an email in the following weeks about our workshop schedule and information on how to register.</p>
     </div>
   </div>
 </div>
@@ -151,7 +151,14 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('week1Modal')">&times;</span>
     <img src="https://via.placeholder.com/200x150.png?text=Week+1-2" alt="Week 1-2">
-    <div class="text"><p>Week 1-2 activities: Introduction to engineering principles, basic electronics, coding fundamentals, and simple robot assembly exercises.</p></div>
+    <div class="text"><p>
+        During Weeks 1-2, students are introduced to our <strong>Game Manual</strong>, which explains what their robots should be able to accomplish.
+        We provide a demonstration on how to <strong>solder wires</strong>, followed by a hands-on session where students solder their own connections.
+      </p>
+      <p>
+        Students also get an introduction to the electrical components used in our program, including <strong>ESP32 microcontrollers</strong>, <strong>LN motor drivers</strong>, and <strong>servo motors</strong>.
+        Additionally, we cover <strong>CAD fundamentals</strong> using <strong>OnShape</strong> and guide students in creating 3D models of their robots.
+      </p></div>
   </div>
 </div>
 
@@ -159,7 +166,13 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('week2Modal')">&times;</span>
     <img src="https://via.placeholder.com/200x150.png?text=Week+3-4" alt="Week 3-4">
-    <div class="text"><p>Week 3-4 activities: Hands-on robot building, wiring, ESP32 programming, and debugging practice.</p></div>
+    <div class="text">  <p>
+        During Weeks 3-4, students receive the <strong>3D printed models</strong> of the robots they designed in the previous week. 
+        They are given time to <strong>assemble and manufacture their robots</strong> and <strong>test whether all the components work properly</strong>.
+      </p>
+      <p>
+        This hands-on phase helps students understand how their CAD designs translate into real robots, and allows them to troubleshoot any assembly issues before moving on to programming and fine tuning.
+      </p></div>
   </div>
 </div>
 
@@ -167,7 +180,12 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('week3Modal')">&times;</span>
     <img src="https://via.placeholder.com/200x150.png?text=Week+5" alt="Week 5">
-    <div class="text"><p>Week 5 activities: Testing and debugging, strategy development, teamwork exercises, and preparing robots for competition.</p></div>
+    <div class="text"> <p>
+        Week 5 is focused on <strong>programming the robots</strong>. Students start with a <strong>test code</strong> and must iterate it to match their individual wiring and robot configurations, since each robot is customized.
+      </p>
+      <p>
+        During this week, we also hold <strong>driver tryouts</strong>, allowing students to compete in a fun and engaging way while determining who is best suited to drive their robot during the final competition.
+      </p></div>
   </div>
 </div>
 
@@ -184,7 +202,10 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('why1Modal')">&times;</span>
     <img src="https://via.placeholder.com/200x150.png?text=Hands-On" alt="Hands-On Learning">
-    <div class="text"><p>Students learn by building, experimenting, and testing real robots rather than just reading or watching videos.</p></div>
+    <div class="text"> <p>
+        We believe students best learn while participating in <strong>hands-on activities</strong> rather than watching a lecturer explain concepts through slides on a screen. 
+        It is our mission to bring STEM and robotics education to all students in an <strong>accessible and affordable</strong> way.
+      </p></div>
   </div>
 </div>
 
@@ -192,7 +213,7 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('why2Modal')">&times;</span>
     <img src="https://via.placeholder.com/200x150.png?text=Engineering+Tools" alt="Engineering Tools">
-    <div class="text"><p>Use real-world tools like microcontrollers, stepper motors, CAD software, and sensors to gain hands-on experience.</p></div>
+    <div class="text"><p>Use real-world tools such as ESP32 microcontrollers, DC & Servo motors, CAD software (OnShape), and PS4 controllers to gain real engineering experiences.</p></div>
   </div>
 </div>
 
