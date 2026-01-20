@@ -73,6 +73,7 @@
     flex-wrap: wrap;
     justify-content: center; 
     align-items: flex-start;
+    position: relative; /* Added for close button positioning */
   }
 
   .modal-content img {
@@ -105,6 +106,32 @@
   .join-modal-content .text {
     flex: 1;
     color: #cbd5f5;
+  }
+
+  /* Close button styles */
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--accent);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+    z-index: 1001;
+  }
+
+  .close-btn:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+    transform: scale(1.1);
   }
 
   @media (max-width: 700px) {
@@ -182,7 +209,7 @@
 
 <section id="contact" class="contact">
   <h2 class="section-title">Get Involved</h2>
-  <p style="color:#cbd5f5; max-width:600px; margin:0 auto 2rem;">We encourage parents, students, schools, and community partners to reach out with any questions or collaboration ideas. Whether you’re interested in enrolling, hosting a program, or volunteering, we’re happy to connect and explore how STEM Works can support your community.</p>
+  <p style="color:#cbd5f5; max-width:600px; margin:0 auto 2rem;">We encourage parents, students, schools, and community partners to reach out with any questions or collaboration ideas. Whether you're interested in enrolling, hosting a program, or volunteering, we're happy to connect and explore how STEM Works can support your community.</p>
   <button class="btn" onclick="openModal('contactModal')">Contact STEM Works</button>
 </section>
 
@@ -191,6 +218,7 @@
 <!-- Join Program Modal -->
 <div id="joinModal" class="modal">
   <div class="modal-content join-modal-content">
+    <span class="close-btn" onclick="closeModal('joinModal')">&times;</span>
     <!-- QR code on the left -->
     <div class="qr-container">
       <img src="qr-code (15).png" alt="QR Code">
@@ -212,6 +240,7 @@
 <!-- Week Modals -->
 <div id="week1Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('week1Modal')">&times;</span>
     <img src="Screenshot 2026-01-18 160720.jpg" alt="Week 1-2" style="max-width:600px; height:auto; border-radius:15px;">
     <div class="text"><p>
         During Weeks 1-2, students are introduced to our <strong>Game Manual</strong>, which explains what their robots should be able to accomplish.
@@ -226,6 +255,7 @@
 
 <div id="week2Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('week2Modal')">&times;</span>
     <img src="Screenshot 2026-01-18 160758.jpg" alt="Week 3-4">
     <div class="text">  
       <p>
@@ -241,6 +271,7 @@
 
 <div id="week3Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('week3Modal')">&times;</span>
     <img src="Screenshot 2026-01-18 161028.jpg" alt="Week 5">
     <div class="text"> 
       <p>
@@ -255,9 +286,10 @@
 
 <div id="week4Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('week4Modal')">&times;</span>
     <img src="Screenshot 2026-01-18 160855.jpg" alt="Week 6">
     <div class="text">
-      <p>The final week brings everything together in an exciting competition environment. Teams put their robots to the test, applying everything they’ve learned throughout the program. Students reflect on their design decisions, teamwork, and problem-solving approaches while celebrating their accomplishments in a supportive and rewarding setting.</p>
+      <p>The final week brings everything together in an exciting competition environment. Teams put their robots to the test, applying everything they've learned throughout the program. Students reflect on their design decisions, teamwork, and problem-solving approaches while celebrating their accomplishments in a supportive and rewarding setting.</p>
     </div>
   </div>
 </div>
@@ -265,6 +297,7 @@
 <!-- Why STEM Works Modals -->
 <div id="why1Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('why1Modal')">&times;</span>
     <div class="text"> <p>
         Students gain exposure to industry-relevant tools and technologies used by professional engineers. By working with microcontrollers, motors, CAD software, and control systems, participants develop practical skills that prepare them for future academic and career opportunities in STEM fields. </p></div>
   </div>
@@ -272,12 +305,14 @@
 
 <div id="why2Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('why2Modal')">&times;</span>
     <div class="text"><p>Use real-world tools such as ESP32 microcontrollers, DC & Servo motors, CAD software (OnShape), and PS4 controllers to gain real engineering experiences.</p></div>
   </div>
 </div>
 
 <div id="why3Modal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('why3Modal')">&times;</span>
     <div class="text"><p>Collaboration is a core part of engineering, and our program emphasizes teamwork at every stage. Students learn how to communicate ideas, divide responsibilities, and support one another under real project constraints. Friendly competition motivates students while reinforcing sportsmanship, leadership, and resilience.</p></div>
   </div>
 </div>
@@ -285,6 +320,7 @@
 <!-- Contact Modal -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
     <div class="text" style="text-align:center;">
       <p>Email us at: 
         <a href="mailto:stemworks.toronto@gmail.com" style="color:var(--accent);">
