@@ -2,384 +2,228 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3DPKZ228Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J3DPKZ228Q');
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>STEM Works | Robotics & Engineering Programs</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --blue: #1e90ff;
-    --dark: #0f172a;
-    --dark-grey: #1e293b;
-    --light: #f8fafc;
-    --accent: #38bdf8;
-  }
-
-  * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-  body {background: linear-gradient(180deg, var(--dark), #020617); color: var(--light); line-height:1.6;}
-
-  header {padding: 1.5rem 5%; display:flex; justify-content:space-between; align-items:center;}
-  header h1 {color: var(--accent); font-size:1.8rem; font-weight:700;}
-  nav a {margin-left:1.5rem; color: var(--light); text-decoration:none; font-weight:400; transition: color 0.3s;}
-  nav a:hover {color: var(--accent);}
-
-  .hero {padding:5rem 5%; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;}
-  .hero h2 {font-size:3rem; font-weight:700; background:linear-gradient(90deg,var(--blue),var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
-  .hero p {margin:1.5rem 0; color:#cbd5f5; max-width:500px;}
-  .btn {display:inline-block; padding:0.9rem 1.8rem; background:linear-gradient(135deg,var(--blue),var(--accent)); color:#000; font-weight:600; border-radius:8px; text-decoration:none; cursor:pointer; transition: transform 0.2s, box-shadow 0.2s;}
-  .btn:hover {transform: translateY(-3px); box-shadow:0 10px 25px rgba(56,189,248,0.4);}
-
-  section {padding:4rem 5%;}
-  .section-title {font-size:2.2rem; margin-bottom:1.5rem; color: var(--accent);}
-  .cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem;}
-  .card {background:linear-gradient(180deg,var(--dark-grey),#020617); padding:2rem; border-radius:15px; border:1px solid rgba(56,189,248,0.15); transition: transform 0.3s, box-shadow 0.3s; cursor:pointer;}
-  .card:hover {transform: translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.6);}
-  .card h3 {color: var(--blue); margin-bottom:0.8rem;}
-  .card p {color:#cbd5f5; font-size:0.95rem;}
-
-  .contact {text-align:center; background: linear-gradient(135deg,#020617,var(--dark-grey)); border-top:1px solid rgba(56,189,248,0.2);}
-
-  footer {text-align:center; padding:1.5rem; font-size:0.9rem; color:#94a3b8;}
-
-  /* Modal Styles */
-  .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
-    left: 0; top: 0; width: 100%; height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.8);
-  }
-
-  .modal-content {
-    background: var(--dark-grey); 
-    margin: 5% auto; 
-    padding: 2rem; 
-    border: 1px solid var(--accent);
-    width: 90%;          
-    max-width: 900px;    
-    border-radius: 15px;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: flex-start;
-    position: relative; /* Added for close button positioning */
-  }
-
-  .modal-content img {
-    max-width: 45%;    
-    height: auto;      
-    border-radius: 15px;
-    object-fit: contain;
-  }
-
-  /* QR Code specific modal styling */
-  .join-modal-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 2rem;
-    justify-content: flex-start;
-  }
-
-  .join-modal-content .qr-container {
-    flex: 0 0 150px; /* smaller QR code width */
-    text-align: center;
-  }
-
-  .join-modal-content .qr-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  .join-modal-content .text {
-    flex: 1;
-    color: #cbd5f5;
-  }
-
-  /* Close button styles */
-  .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: var(--accent);
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    background: none;
-    border: none;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.3s;
-    z-index: 1001;
-  }
-
-  .close-btn:hover {
-    background-color: rgba(56, 189, 248, 0.1);
-    transform: scale(1.1);
-  }
-@media (max-width: 700px) {
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .modal-content img {
-    max-width: 100%;   /* important fix */
-    width: 100%;
-  }
-
-  .join-modal-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .join-modal-content .qr-container {
-    width: 80%;
-    margin-bottom: 1rem;
-  }
-
-  .join-modal-content .text {
-    width: 100%;
-  }
-
-}
-<body>
-
-<header>
-  <h1>STEM Works</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#program">Program</a>
-    <a href="#why">Why Us</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div>
-    <h2>Building the Next Generation of Engineers</h2>
-    <p>Our programs are designed to introduce students to real-world engineering in a way that is engaging, hands-on, and fun. Through guided instruction and open-ended challenges, students learn how engineers think, design, and solve problems. By the end of the program, participants gain confidence in their technical abilities while developing creativity, teamwork, and problem-solving skills that extend far beyond the classroom.</p>
-   <button class="btn" onclick="trackSignupClick(); openModal('joinModal');">
-  Sign up today!
-</button>
-
-  </div>
-  <div>
-    <img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" alt="Robotics" style="width:100%; border-radius: 20px; box-shadow:0 25px 50px rgba(0,0,0,0.7);">
-  </div>
-</section>
-  
-<section id="about" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; padding:4rem 5%;">
-  <div>
-    <img src="Screenshot 2026-01-18 160310.jpg" alt="STEM Works Students" style="width:100%; border-radius: 20px; box-shadow:0 25px 50px rgba(0,0,0,0.7);">
-  </div>
-  <div>
-    <h2 class="section-title">About STEM Works</h2>
-    <p style="color:#cbd5f5; max-width:500px;">
-      At STEM Works, we believe that the best way to learn engineering is by building real systems from start to finish. Our workshops are developed and led by engineering students who understand both the technical depth and the challenges of learning complex concepts for the first time. We focus on creating an inclusive environment where students are encouraged to experiment, ask questions, and learn from failure as part of the engineering process.  </p>
-  </div>
-</section>
-
-<section id="program">
-  <h2 class="section-title">Our 6-Week Robotics Program</h2>
-  <div class="cards">
-    <div class="card" onclick="openModal('week1Modal')"><h3>Week 1–2</h3><p>Intro to engineering, electronics, and CAD fundamentals.</p></div>
-    <div class="card" onclick="openModal('week2Modal')"><h3>Week 3–4</h3><p>Hands on robot building, wiring, and ESP32 programming.</p></div>
-    <div class="card" onclick="openModal('week3Modal')"><h3>Week 5</h3><p>Testing, debugging, and strategy development.</p></div>
-    <div class="card" onclick="openModal('week4Modal')"><h3>Week 6</h3><p>Final competition day.</p></div>
-  </div>
-</section>
-
-<section id="why">
-  <h2 class="section-title">Why STEM Works?</h2>
-  <div class="cards">
-    <div class="card" onclick="openModal('why1Modal')"><h3>Hands-On Learning</h3><p>Students learn by doing, not just watching.</p></div>
-    <div class="card" onclick="openModal('why2Modal')"><h3>Real Engineering Tools</h3><p>Use microcontrollers, motors and CAD to build your own unique robot.</p></div>
-    <div class="card" onclick="openModal('why3Modal')"><h3>Teamwork & Competition</h3><p>Build collaboration, critical thinking, and leadership skills.</p></div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2 class="section-title">Get Involved</h2>
-  <p style="color:#cbd5f5; max-width:600px; margin:0 auto 2rem;">We encourage parents, students, schools, and community partners to reach out with any questions or collaboration ideas. Whether you're interested in enrolling, hosting a program, or volunteering, we're happy to connect and explore how STEM Works can support your community.</p>
-  <button class="btn" onclick="openModal('contactModal')">Contact STEM Works</button>
-</section>
-
-<footer>© 2026 STEM Works. All rights reserved.</footer>
-
-<!-- Join Program Modal -->
-<div id="joinModal" class="modal">
-  <div class="modal-content join-modal-content">
-    <span class="close-btn" onclick="closeModal('joinModal')">&times;</span>
-    <!-- QR code on the left -->
-    <div class="qr-container">
-      <img src="qr-code (15).png" alt="QR Code">
-      <p style="margin-top:10px;">
-        <a href="https://forms.gle/3txeFZxCSJS6Q9648" target="_blank" style="color:var(--accent);">
-          Google Form Link
-        </a>
-      </p>
-    </div>
-    <!-- Text on the right -->
-    <div class="text">
-      <p>
-        Our registration process is simple and accessible. Families can sign up using the Google Form or QR code to express interest and receive further details about scheduling, registration, and program logistics. This ensures clear communication and allows us to provide timely updates as sessions approach.
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- Week Modals -->
-<div id="week1Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('week1Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 160720.jpg" alt="Week 1-2" style="max-width:600px; height:auto; border-radius:15px;">
-    <div class="text"><p>
-        During Weeks 1-2, students are introduced to our <strong>Game Manual</strong>, which explains what their robots should be able to accomplish.
-        We provide a demonstration on how to <strong>solder wires</strong>, followed by a hands-on session where students solder their own connections.
-      </p>
-      <p>
-        Students also get an introduction to the electrical components used in our program, including <strong>ESP32 microcontrollers</strong>, <strong>LN motor drivers</strong>, and <strong>servo motors</strong>.
-        Additionally, we cover <strong>CAD fundamentals</strong> using <strong>OnShape</strong> and guide students in creating 3D models of their robots.
-      </p></div>
-  </div>
-</div>
-
-<div id="week2Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('week2Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 160758.jpg" alt="Week 3-4">
-    <div class="text">  
-      <p>
-        During Weeks 3-4, students receive the <strong>3D printed models</strong> of the robots they designed in the previous week. 
-        They are given time to <strong>assemble and manufacture their robots</strong> and <strong>test whether all the components work properly</strong>.
-      </p>
-      <p>
-        This hands-on phase helps students understand how their CAD designs translate into real robots, and allows them to troubleshoot any assembly issues before moving on to programming and fine tuning.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div id="week3Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('week3Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 161028.jpg" alt="Week 5">
-    <div class="text"> 
-      <p>
-        Week 5 is focused on <strong>programming the robots</strong>. Students start with a <strong>test code</strong> and must iterate it to match their individual wiring and robot configurations, since each robot is customized.
-      </p>
-      <p>
-        During this week, we also hold <strong>driver tryouts</strong>, allowing students to compete in a fun and engaging way while determining who is best suited to drive their robot during the final competition.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div id="week4Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('week4Modal')">&times;</span>
-    <img src="Screenshot 2026-01-18 160855.jpg" alt="Week 6">
-    <div class="text">
-      <p>The final week brings everything together in an exciting competition environment. Teams put their robots to the test, applying everything they've learned throughout the program. Students reflect on their design decisions, teamwork, and problem-solving approaches while celebrating their accomplishments in a supportive and rewarding setting.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Why STEM Works Modals -->
-<div id="why1Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('why1Modal')">&times;</span>
-    <div class="text"> <p>
-        Students gain exposure to industry-relevant tools and technologies used by professional engineers. By working with microcontrollers, motors, CAD software, and control systems, participants develop practical skills that prepare them for future academic and career opportunities in STEM fields. </p></div>
-  </div>
-</div>
-
-<div id="why2Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('why2Modal')">&times;</span>
-    <div class="text"><p>Use real-world tools such as ESP32 microcontrollers, DC & Servo motors, CAD software (OnShape), and PS4 controllers to gain real engineering experiences.</p></div>
-  </div>
-</div>
-
-<div id="why3Modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('why3Modal')">&times;</span>
-    <div class="text"><p>Collaboration is a core part of engineering, and our program emphasizes teamwork at every stage. Students learn how to communicate ideas, divide responsibilities, and support one another under real project constraints. Friendly competition motivates students while reinforcing sportsmanship, leadership, and resilience.</p></div>
-  </div>
-</div>
-
-<!-- Contact Modal -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
-    <div class="text" style="text-align:center;">
-      <p>Email us at: 
-        <a href="mailto:stemworks.toronto@gmail.com" style="color:var(--accent);">
-          stemworks.toronto@gmail.com
-        </a>
-      </p>
-      <p>Call us at: 
-        <a href="tel:4379815696" style="color:var(--accent);">
-          437-981-5696
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-
-<script>
-  function openModal(id){
-    document.getElementById(id).style.display='block';
-  }
-  function closeModal(id){
-    document.getElementById(id).style.display='none';
-  }
-  // Close modal when clicking outside
-  window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if(event.target == modal){
-        modal.style.display = 'none';
-      }
-    });
-  }
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3DPKZ228Q"></script>
   <script>
-  function trackSignupClick() {
-    if (typeof gtag === 'function') {
-      gtag('event', 'signup_modal_open', {
-        event_category: 'engagement',
-        event_label: 'hero_signup_button',
-        page_path: window.location.pathname
-      });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3DPKZ228Q');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEM Works | Robotics & Engineering Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1e90ff;
+      --dark: #0f172a;
+      --dark-grey: #1e293b;
+      --light: #f8fafc;
+      --accent: #38bdf8;
     }
-  }
-</script>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+    body {background: linear-gradient(180deg, var(--dark), #020617); color: var(--light); line-height:1.6;}
+    header {padding: 1.5rem 5%; display:flex; justify-content:space-between; align-items:center;}
+    header h1 {color: var(--accent); font-size:1.8rem; font-weight:700;}
+    nav a {margin-left:1.5rem; color: var(--light); text-decoration:none; font-weight:400; transition: color 0.3s;}
+    nav a:hover {color: var(--accent);}
+    .hero {padding:5rem 5%; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;}
+    .hero h2 {font-size:3rem; font-weight:700; background:linear-gradient(90deg,var(--blue),var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+    .hero p {margin:1.5rem 0; color:#cbd5f5; max-width:500px;}
+    .btn {display:inline-block; padding:0.9rem 1.8rem; background:linear-gradient(135deg,var(--blue),var(--accent)); color:#000; font-weight:600; border-radius:8px; text-decoration:none; cursor:pointer; transition: transform 0.2s, box-shadow 0.2s;}
+    .btn:hover {transform: translateY(-3px); box-shadow:0 10px 25px rgba(56,189,248,0.4);}
+    section {padding:4rem 5%;}
+    .section-title {font-size:2.2rem; margin-bottom:1.5rem; color: var(--accent);}
+    .cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem;}
+    .card {background:linear-gradient(180deg,var(--dark-grey),#020617); padding:2rem; border-radius:15px; border:1px solid rgba(56,189,248,0.15); transition: transform 0.3s, box-shadow 0.3s; cursor:pointer;}
+    .card:hover {transform: translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.6);}
+    .card h3 {color: var(--blue); margin-bottom:0.8rem;}
+    .card p {color:#cbd5f5; font-size:0.95rem;}
+    .contact {text-align:center; background: linear-gradient(135deg,#020617,var(--dark-grey)); border-top:1px solid rgba(56,189,248,0.2);}
+    footer {text-align:center; padding:1.5rem; font-size:0.9rem; color:#94a3b8;}
+    /* Modal Styles */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+    .modal-content { background: var(--dark-grey); margin: 5% auto; padding: 2rem; border: 1px solid var(--accent); width: 90%; max-width: 900px; border-radius: 15px; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; align-items: flex-start; position: relative; }
+    .modal-content img { max-width: 45%; height: auto; border-radius: 15px; object-fit: contain; }
+    .join-modal-content { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem; justify-content: flex-start; }
+    .join-modal-content .qr-container { flex: 0 0 150px; text-align: center; }
+    .join-modal-content .qr-container img { max-width: 100%; height: auto; border-radius: 10px; }
+    .join-modal-content .text { flex: 1; color: #cbd5f5; }
+    .close-btn { position: absolute; top: 15px; right: 15px; color: var(--accent); font-size: 28px; font-weight: bold; cursor: pointer; background: none; border: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; z-index: 1001; }
+    .close-btn:hover { background-color: rgba(56, 189, 248, 0.1); transform: scale(1.1); }
+    @media (max-width: 700px) {
+      .hero {grid-template-columns:1fr;}
+      .modal-content {flex-direction:column; align-items:center; text-align:center;}
+      .modal-content img {width:80%;}
+      .join-modal-content { flex-direction: column; align-items: center; text-align: center; }
+      .join-modal-content .qr-container { width: 80%; margin-bottom: 1rem; }
+      .join-modal-content .text { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>STEM Works</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#program">Program</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <div>
+      <h2>Building the Next Generation of Engineers</h2>
+      <p>Our programs are designed to introduce students to real-world engineering in a way that is engaging, hands-on, and fun. Through guided instruction and open-ended challenges, students learn how engineers think, design, and solve problems. By the end of the program, participants gain confidence in their technical abilities while developing creativity, teamwork, and problem-solving skills that extend far beyond the classroom.</p>
+      <button class="btn" onclick="trackSignupClick(); openModal('joinModal');"> Sign up today! </button>
+    </div>
+    <div>
+      <img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" alt="Robotics" style="width:100%; border-radius: 20px; box-shadow:0 25px 50px rgba(0,0,0,0.7);">
+    </div>
+  </section>
 
-</body>
-</html>
+  <section id="about" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; padding:4rem 5%;">
+    <div>
+      <img src="Screenshot 2026-01-18 160310.jpg" alt="STEM Works Students" style="width:100%; border-radius: 20px; box-shadow:0 25px 50px rgba(0,0,0,0.7);">
+    </div>
+    <div>
+      <h2 class="section-title">About STEM Works</h2>
+      <p style="color:#cbd5f5; max-width:500px;">
+        At STEM Works, we believe that the best way to learn engineering is by building real systems from start to finish. Our workshops are developed and led by engineering students who understand both the technical depth and the challenges of learning complex concepts for the first time. We focus on creating an inclusive environment where students are encouraged to experiment, ask questions, and learn from failure as part of the engineering process.
+      </p>
+    </div>
+  </section>
+
+  <section id="program">
+    <h2 class="section-title">Our 6-Week Robotics Program</h2>
+    <div class="cards">
+      <div class="card" onclick="openModal('week1Modal')"><h3>Week 1–2</h3><p>Intro to engineering, electronics, and CAD fundamentals.</p></div>
+      <div class="card" onclick="openModal('week2Modal')"><h3>Week 3–4</h3><p>Hands on robot building, wiring, and ESP32 programming.</p></div>
+      <div class="card" onclick="openModal('week3Modal')"><h3>Week 5</h3><p>Testing, debugging, and strategy development.</p></div>
+      <div class="card" onclick="openModal('week4Modal')"><h3>Week 6</h3><p>Final competition day.</p></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2 class="section-title">Why STEM Works?</h2>
+    <div class="cards">
+      <div class="card" onclick="openModal('why1Modal')"><h3>Hands-On Learning</h3><p>Students learn by doing, not just watching.</p></div>
+      <div class="card" onclick="openModal('why2Modal')"><h3>Real Engineering Tools</h3><p>Use microcontrollers, motors and CAD to build your own unique robot.</p></div>
+      <div class="card" onclick="openModal('why3Modal')"><h3>Teamwork & Competition</h3><p>Build collaboration, critical thinking, and leadership skills.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get Involved</h2>
+    <p style="color:#cbd5f5; max-width:600px; margin:0 auto 2rem;">We encourage parents, students, schools, and community partners to reach out with any questions or collaboration ideas. Whether you're interested in enrolling, hosting a program, or volunteering, we're happy to connect and explore how STEM Works can support your community.</p>
+    <button class="btn" onclick="openModal('contactModal')">Contact STEM Works</button>
+  </section>
+
+  <footer>© 2026 STEM Works. All rights reserved.</footer>
+
+  <!-- Join Program Modal -->
+  <div id="joinModal" class="modal">
+    <div class="modal-content join-modal-content">
+      <span class="close-btn" onclick="closeModal('joinModal')">&times;</span>
+      <div class="qr-container">
+        <img src="qr-code (15).png" alt="QR Code">
+        <p style="margin-top:10px;">
+          <a href="https://forms.gle/3txeFZxCSJS6Q9648" target="_blank" style="color:var(--accent);"> Google Form Link </a>
+        </p>
+      </div>
+      <div class="text">
+        <p> Our registration process is simple and accessible. Families can sign up using the Google Form or QR code to express interest and receive further details about scheduling, registration, and program logistics. This ensures clear communication and allows us to provide timely updates as sessions approach. </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week Modals -->
+  <div id="week1Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('week1Modal')">&times;</span>
+      <img src="Screenshot 2026-01-18 160720.jpg" alt="Week 1-2" style="max-width:600px; height:auto; border-radius:15px;">
+      <div class="text">
+        <p>During Weeks 1-2, students are introduced to our <strong>Game Manual</strong>, which explains what their robots should be able to accomplish. We provide a demonstration on how to <strong>solder wires</strong>, followed by a hands-on session where students solder their own connections.</p>
+        <p>Students also get an introduction to the electrical components used in our program, including <strong>ESP32 microcontrollers</strong>, <strong>LN motor drivers</strong>, and <strong>servo motors</strong>. Additionally, we cover <strong>CAD fundamentals</strong> using <strong>OnShape</strong> and guide students in creating 3D models of their robots.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="week2Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('week2Modal')">&times;</span>
+      <img src="Screenshot 2026-01-18 160758.jpg" alt="Week 3-4">
+      <div class="text">
+        <p>During Weeks 3-4, students receive the <strong>3D printed models</strong> of the robots they designed in the previous week. They are given time to <strong>assemble and manufacture their robots</strong> and <strong>test whether all the components work properly</strong>.</p>
+        <p>This hands-on phase helps students understand how their CAD designs translate into real robots, and allows them to troubleshoot any assembly issues before moving on to programming and fine tuning.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="week3Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('week3Modal')">&times;</span>
+      <img src="Screenshot 2026-01-18 161028.jpg" alt="Week 5">
+      <div class="text">
+        <p>Week 5 is focused on <strong>programming the robots</strong>. Students start with a <strong>test code</strong> and must iterate it to match their individual wiring and robot configurations, since each robot is customized.</p>
+        <p>During this week, we also hold <strong>driver tryouts</strong>, allowing students to compete in a fun and engaging way while determining who is best suited to drive their robot during the final competition.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="week4Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('week4Modal')">&times;</span>
+      <img src="Screenshot 2026-01-18 160855.jpg" alt="Week 6">
+      <div class="text">
+        <p>The final week brings everything together in an exciting competition environment. Teams put their robots to the test, applying everything they've learned throughout the program. Students reflect on their design decisions, teamwork, and problem-solving approaches while celebrating their accomplishments in a supportive and rewarding setting.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why STEM Works Modals -->
+  <div id="why1Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('why1Modal')">&times;</span>
+      <div class="text">
+        <p>Students gain exposure to industry-relevant tools and technologies used by professional engineers. By working with microcontrollers, motors, CAD software, and control systems, participants develop practical skills that prepare them for future academic and career opportunities in STEM fields.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="why2Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('why2Modal')">&times;</span>
+      <div class="text">
+        <p>Use real-world tools such as ESP32 microcontrollers, DC & Servo motors, CAD software (OnShape), and PS4 controllers to gain real engineering experiences.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="why3Modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('why3Modal')">&times;</span>
+      <div class="text">
+        <p>Collaboration is a core part of engineering, and our program emphasizes teamwork at every stage. Students learn how to communicate ideas, divide responsibilities, and support one another under real project constraints. Friendly competition motivates students while reinforcing sportsmanship, leadership, and resilience.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+      <div class="text" style="text-align:center;">
+        <p>Email us at: <a href="mailto:stemworks.toronto@gmail.com" style="color:var(--accent);"> stemworks.toronto@gmail.com </a></p>
+        <p>Call us at: <a href="tel:4379815696" style="color:var(--accent);"> 437-981-5696 </a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id){ document.getElementById(id).style.display='block'; }
+    function closeModal(id){ document.getElementById(id).style.display='none'; }
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach
