@@ -38,6 +38,11 @@
             cursor: none;
         }
 
+        /* Restore default cursor when a modal is open */
+        body.modal-open {
+            cursor: auto;
+        }
+
         canvas#grid {
             position: fixed;
             top: 0; left: 0;
@@ -328,7 +333,7 @@
             right: 18px;
             color: rgba(56,189,248,0.7);
             font-size: 26px;
-            cursor: none;
+            cursor: pointer;
             line-height: 1;
             transition: color 0.2s;
             z-index: 10;
@@ -568,12 +573,32 @@
 </div>
 
 <script>
-    function openModal(id) { document.getElementById(id).style.display = 'block'; }
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+    // Track how many modals are currently open
+    let openModalCount = 0;
+
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+        openModalCount++;
+        document.body.classList.add('modal-open');
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+        openModalCount = Math.max(0, openModalCount - 1);
+        if (openModalCount === 0) {
+            document.body.classList.remove('modal-open');
+        }
+    }
 
     window.onclick = function(e) {
         document.querySelectorAll('.modal').forEach(m => {
-            if (e.target === m) m.style.display = 'none';
+            if (e.target === m) {
+                m.style.display = 'none';
+                openModalCount = Math.max(0, openModalCount - 1);
+                if (openModalCount === 0) {
+                    document.body.classList.remove('modal-open');
+                }
+            }
         });
     };
 
@@ -626,17 +651,13 @@
     window.addEventListener('resize', resize);
 
     /* ── PAINTBRUSH CURSOR ── */
-    /* Raw mouse target */
     let targetX = -999, targetY = -999;
-
-    /* Smoothed "head" position (lerped toward target) */
     let headX = -999, headY = -999;
 
-    /* Trail: array of {x, y, r, alpha} — historical positions */
-    const TRAIL_LEN   = 48;   /* number of trail dots */
-    const LERP        = 0.14; /* lower = smoother/laggier */
-    const HEAD_R      = 14;   /* radius of the leading circle */
-    const TAIL_R_MIN  = 2;    /* radius at the very end of the trail */
+    const TRAIL_LEN   = 48;
+    const LERP        = 0.14;
+    const HEAD_R      = 14;
+    const TAIL_R_MIN  = 2;
 
     const trail = [];
 
@@ -647,6 +668,17 @@
     }, { passive: true });
 
     function loop() {
+        /* If a modal is open, clear the glow canvas and skip drawing */
+        if (document.body.classList.contains('modal-open')) {
+            glowCtx.clearRect(0, 0, glowCanvas.width, glowCanvas.height);
+            /* Reset trail so it doesn't burst back when modal closes */
+            trail.length = 0;
+            headX = targetX;
+            headY = targetY;
+            requestAnimationFrame(loop);
+            return;
+        }
+
         /* Lerp head toward target */
         headX += (targetX - headX) * LERP;
         headY += (targetY - headY) * LERP;
@@ -662,8 +694,8 @@
 
         /* Draw trail from tail → head so head paints on top */
         for (let i = trail.length - 1; i >= 0; i--) {
-            const t     = i / (TRAIL_LEN - 1);          /* 0 = head, 1 = tail */
-            const alpha = Math.pow(1 - t, 1.6) * 0.72;  /* fade toward tail */
+            const t     = i / (TRAIL_LEN - 1);
+            const alpha = Math.pow(1 - t, 1.6) * 0.72;
             const r     = TAIL_R_MIN + (HEAD_R - TAIL_R_MIN) * Math.pow(1 - t, 1.2);
 
             const pt = trail[i];
