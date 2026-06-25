@@ -559,9 +559,16 @@ function draw(){
                 let gy=Math.abs(dy)/gridSize;
 
               if(gx>2||gy>2) continue;
+let ax = Math.abs(dx);
+let ay = Math.abs(dy);
 
-                let dist=Math.sqrt(dx*dx+dy*dy);
-                intensity += Math.max(0,1-dist/70)*t.life;
+/* + SHAPE cutoff (removes diagonal corners) */
+if (ax > gridSize * 2 || ay > gridSize * 2) continue;
+
+/* cross-style distance (NOT diagonal circle) */
+let dist = ax + ay;
+
+let glow = Math.max(0, 1 - dist / 90);
             }
 
             intensity=Math.min(intensity,1);
