@@ -379,6 +379,14 @@
             nav a { font-size: 0.85rem; margin-left: 0.5rem; }
             .hero h2 { font-size: 1.85rem; }
         }
+        @keyframes galleryScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+#gallery-track:hover {
+    animation-play-state: paused;
+}
     </style>
 </head>
 
@@ -392,7 +400,6 @@
     <nav>
         <a href="#about">About</a>
         <a href="#program">Program</a>
-        <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -439,7 +446,99 @@
         </div>
     </div>
 </section>
+<section id="gallery" style="padding: 4rem 0; overflow: hidden;">
+    <h2 class="section-title" style="padding: 0 5%; margin-bottom: 2rem;">Past Events</h2>
+    <div style="position: relative; width: 100%; overflow: hidden;">
+        <div id="gallery-track" style="
+            display: flex;
+            gap: 1.2rem;
+            width: max-content;
+            animation: galleryScroll 35s linear infinite;
+        ">
+            <!-- First set -->
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
 
+            <!-- Duplicate set for seamless loop -->
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div style="flex-shrink:0; width: 340px; height: 230px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
+                <img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="contact" class="contact">
     <h2 class="section-title">Get Involved</h2>
