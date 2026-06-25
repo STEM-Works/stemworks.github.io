@@ -379,14 +379,14 @@
             nav a { font-size: 0.85rem; margin-left: 0.5rem; }
             .hero h2 { font-size: 1.85rem; }
         }
-    @keyframes galleryScroll {
+  @keyframes galleryScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
 @keyframes galleryScroll2 {
-    0%   { transform: translateX(-25%); }
-    100% { transform: translateX(-75%); }
+    0%   { transform: translateX(-261px); }
+    100% { transform: translateX(calc(-50% - 261px)); }
 }
 
 #gallery-track-1:hover,
