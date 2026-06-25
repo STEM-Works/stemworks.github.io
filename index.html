@@ -379,12 +379,18 @@
             nav a { font-size: 0.85rem; margin-left: 0.5rem; }
             .hero h2 { font-size: 1.85rem; }
         }
-        @keyframes galleryScroll {
+    @keyframes galleryScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-#gallery-track:hover {
+@keyframes galleryScroll2 {
+    0%   { transform: translateX(-25%); }
+    100% { transform: translateX(-75%); }
+}
+
+#gallery-track-1:hover,
+#gallery-track-2:hover {
     animation-play-state: paused;
 }
     </style>
@@ -417,98 +423,141 @@
 
     
 <section id="gallery" style="padding: 4rem 0; overflow: hidden;">
-    <h2 class="section-title" style="padding: 0 5%; margin-bottom: 2rem;">Some of our past work with students</h2>
-    <div style="position: relative; width: 100%; overflow: hidden;">
-        <div id="gallery-track" style="
+    <h2 class="section-title" style="padding: 0 5%; margin-bottom: 2rem;">Past Events</h2>
+
+    <!-- ROW 1 -->
+    <div style="position: relative; width: 100%; overflow: hidden; margin-bottom: 1.2rem;">
+        <div id="gallery-track-1" style="
             display: flex;
             gap: 1.2rem;
             width: max-content;
-            animation: galleryScroll 35s linear infinite;
+            animation: galleryScroll 50s linear infinite;
         ">
             <!-- First set -->
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160527.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160502.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160449.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160433.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160413.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160357.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160342.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160330.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160301.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160217.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160145.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160115.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160018.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <!-- Duplicate set -->
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160527.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160502.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160449.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160433.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160413.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160357.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160342.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160330.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160301.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160217.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160145.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160115.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160018.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        </div>
+    </div>
 
-            <!-- Duplicate set for seamless loop -->
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);">
-                <img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
+    <!-- ROW 2 — starts offset at -25% so it's staggered -->
+    <div style="position: relative; width: 100%; overflow: hidden;">
+        <div id="gallery-track-2" style="
+            display: flex;
+            gap: 1.2rem;
+            width: max-content;
+            animation: galleryScroll2 50s linear infinite;
+        ">
+            <!-- First set (same images, different order for visual variety) -->
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160018.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160115.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160145.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160217.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160301.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160330.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160342.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160357.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160413.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160433.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160449.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160502.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160527.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <!-- Duplicate set -->
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160018.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160115.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160145.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160217.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160301.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160330.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160342.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160357.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160413.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160433.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160449.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160502.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 160527.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144030.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="ChatGPT Image Jun 25, 2026, 02_40_50 PM.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140438.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142200.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 161028.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 142113.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 144214.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-04-20 140752.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 141935.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-06-25 124731.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160855.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="Screenshot 2026-01-18 160310.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="flex-shrink:0; width: 520px; height: 350px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(56,189,248,0.15);"><img src="333A0AF5-4A4A-43CF-82B5-8672BF48BE3B.png" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         </div>
     </div>
 </section>
+
+
+    
 <section id="about">
     <div class="about-img-wrap">
         <img src="Screenshot 2026-01-18 160310.jpg" alt="STEM Works Students">
