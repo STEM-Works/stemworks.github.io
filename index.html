@@ -35,9 +35,9 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            cursor: none;
         }
 
-        /* ── GRID CANVAS ── */
         canvas#grid {
             position: fixed;
             top: 0; left: 0;
@@ -46,7 +46,6 @@
             pointer-events: none;
         }
 
-        /* ── CURSOR GLOW OVERLAY ── */
         #cursor-glow {
             position: fixed;
             top: 0; left: 0;
@@ -56,13 +55,11 @@
             overflow: hidden;
         }
 
-        /* ── Z-STACK ── */
         header, section, footer, .modal {
             position: relative;
             z-index: 2;
         }
 
-        /* ── HEADER ── */
         header {
             padding: 1.5rem 5%;
             display: flex;
@@ -73,7 +70,7 @@
 
         header h1 {
             color: var(--accent);
-            font-size: 1.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -83,13 +80,12 @@
             color: rgba(248,250,252,0.75);
             text-decoration: none;
             font-weight: 400;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             transition: color 0.25s;
         }
 
         nav a:hover { color: var(--accent); }
 
-        /* ── HERO ── */
         .hero {
             padding: 6rem 5% 5rem;
             display: grid;
@@ -128,7 +124,6 @@
             display: block;
         }
 
-        /* ── BUTTON ── */
         .btn {
             display: inline-block;
             padding: 0.85rem 1.8rem;
@@ -138,7 +133,7 @@
             font-size: 0.95rem;
             border-radius: 10px;
             text-decoration: none;
-            cursor: pointer;
+            cursor: none;
             border: none;
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -148,7 +143,6 @@
             box-shadow: 0 12px 30px rgba(56,189,248,0.35);
         }
 
-        /* ── SECTIONS ── */
         section { padding: 5rem 5%; }
 
         .section-title {
@@ -159,7 +153,6 @@
             letter-spacing: -0.3px;
         }
 
-        /* ── CARDS GRID ── */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -172,7 +165,7 @@
             border-radius: 16px;
             border: 1px solid rgba(56,189,248,0.12);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            cursor: pointer;
+            cursor: none;
         }
 
         .card:hover {
@@ -192,7 +185,6 @@
             font-size: 0.93rem;
         }
 
-        /* ── ABOUT ── */
         #about {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -219,7 +211,6 @@
             font-size: 0.97rem;
         }
 
-        /* ── CONTACT ── */
         .contact {
             text-align: center;
             background: linear-gradient(135deg, rgba(2,6,23,0.8), rgba(30,41,59,0.6));
@@ -234,7 +225,6 @@
             font-size: 0.97rem;
         }
 
-        /* ── FOOTER ── */
         footer {
             text-align: center;
             padding: 1.8rem;
@@ -242,7 +232,6 @@
             color: #475569;
         }
 
-        /* ── MODAL BACKDROP ── */
         .modal {
             display: none;
             position: fixed;
@@ -253,27 +242,24 @@
             overflow-y: auto;
         }
 
-        /* ── MODAL CONTENT (shared base) ── */
         .modal-content {
             background: linear-gradient(160deg, #1e293b, #0f172a);
-            margin: 4% auto;
-            padding: 2.5rem;
+            margin: 2% auto;
+            padding: 3rem;
             border: 1px solid rgba(56,189,248,0.2);
-            width: 92%;
-            max-width: 860px;
+            width: 94%;
+            max-width: 1200px;
             border-radius: 20px;
             position: relative;
         }
 
-        /* ── PROGRAM MODALS — image left, text right ── */
         .modal-content.has-image {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+            gap: 3rem;
             align-items: start;
         }
 
-        /* image wrapper keeps a fixed aspect ratio */
         .modal-img-wrap {
             border-radius: 12px;
             overflow: hidden;
@@ -289,7 +275,6 @@
             display: block;
         }
 
-        /* stacked images for program 1 */
         .modal-images {
             display: flex;
             flex-direction: column;
@@ -302,7 +287,7 @@
 
         .modal-text p {
             color: #94a3b8;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             margin-bottom: 1rem;
             line-height: 1.7;
         }
@@ -311,41 +296,39 @@
 
         .modal-text p strong { color: var(--accent); font-weight: 600; }
 
-        /* ── JOIN / CONTACT MODALS — text only ── */
         .modal-content.text-only {
-            max-width: 560px;
+            max-width: 860px;
             text-align: left;
         }
 
         .modal-content.text-only .text p {
             color: #94a3b8;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             line-height: 1.7;
         }
 
         .modal-content.text-only .text a { color: var(--accent); }
 
         .modal-content.center-text {
-            max-width: 420px;
+            max-width: 600px;
             text-align: center;
         }
 
         .modal-content.center-text .text p {
             color: #94a3b8;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             margin-bottom: 0.75rem;
         }
 
         .modal-content.center-text .text a { color: var(--accent); }
 
-        /* ── CLOSE BUTTON ── */
         .close-btn {
             position: absolute;
             top: 14px;
             right: 18px;
             color: rgba(56,189,248,0.7);
             font-size: 26px;
-            cursor: pointer;
+            cursor: none;
             line-height: 1;
             transition: color 0.2s;
             z-index: 10;
@@ -353,12 +336,36 @@
 
         .close-btn:hover { color: var(--accent); }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 720px) {
+        @media (max-width: 900px) {
+            header h1 { font-size: 2rem; }
+            nav a { font-size: 1rem; margin-left: 1rem; }
             .hero { grid-template-columns: 1fr; padding: 4rem 5%; gap: 2.5rem; }
-            .hero h2 { font-size: 2.2rem; }
+            .hero h2 { font-size: 2.4rem; }
             #about { grid-template-columns: 1fr; }
             .modal-content.has-image { grid-template-columns: 1fr; }
+            .modal-content { padding: 2rem; margin: 3% auto; }
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 1rem 4%; }
+            header h1 { font-size: 1.6rem; }
+            nav a { font-size: 0.88rem; margin-left: 0.75rem; }
+            .hero { padding: 3rem 4% 3rem; gap: 2rem; }
+            .hero h2 { font-size: 2rem; }
+            .section-title { font-size: 1.7rem; }
+            section { padding: 3.5rem 4%; }
+            .cards { grid-template-columns: 1fr; }
+            .modal-content { padding: 1.5rem; margin: 0; width: 100%; border-radius: 16px 16px 0 0; margin-top: 8%; }
+            .modal-content.has-image { grid-template-columns: 1fr; gap: 1.5rem; }
+            .modal-content.text-only,
+            .modal-content.center-text { max-width: 100%; }
+            .close-btn { font-size: 30px; top: 10px; right: 14px; }
+        }
+
+        @media (max-width: 400px) {
+            header h1 { font-size: 1.35rem; }
+            nav a { font-size: 0.8rem; margin-left: 0.5rem; }
+            .hero h2 { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -368,7 +375,6 @@
 <canvas id="grid"></canvas>
 <canvas id="cursor-glow"></canvas>
 
-<!-- HEADER -->
 <header>
     <h1>STEM Works</h1>
     <nav>
@@ -379,7 +385,6 @@
     </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div>
         <h2>Building the Next Generation of Engineers</h2>
@@ -391,7 +396,6 @@
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
     <div class="about-img-wrap">
         <img src="Screenshot 2026-01-18 160310.jpg" alt="STEM Works Students">
@@ -402,7 +406,6 @@
     </div>
 </section>
 
-<!-- PROGRAM -->
 <section id="program">
     <h2 class="section-title">Our Programs</h2>
     <div class="cards">
@@ -425,7 +428,6 @@
     </div>
 </section>
 
-<!-- WHY -->
 <section id="why">
     <h2 class="section-title">Why STEM Works?</h2>
     <div class="cards">
@@ -444,7 +446,6 @@
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
     <h2 class="section-title">Get Involved</h2>
     <p>We encourage parents, students, schools, and community partners to reach out with any questions or collaboration ideas. Whether you're interested in enrolling, hosting a program, or volunteering, we're happy to connect.</p>
@@ -453,9 +454,8 @@
 
 <footer>© 2026 STEM Works. All rights reserved.</footer>
 
-<!-- ═══════════════ MODALS ═══════════════ -->
+<!-- MODALS -->
 
-<!-- Join -->
 <div id="joinModal" class="modal">
     <div class="modal-content text-only">
         <span class="close-btn" onclick="closeModal('joinModal')">&times;</span>
@@ -466,7 +466,6 @@
     </div>
 </div>
 
-<!-- Program 1 -->
 <div id="program1Modal" class="modal">
     <div class="modal-content has-image">
         <span class="close-btn" onclick="closeModal('program1Modal')">&times;</span>
@@ -487,7 +486,6 @@
     </div>
 </div>
 
-<!-- Program 2 -->
 <div id="program2Modal" class="modal">
     <div class="modal-content has-image">
         <span class="close-btn" onclick="closeModal('program2Modal')">&times;</span>
@@ -503,7 +501,6 @@
     </div>
 </div>
 
-<!-- Program 3 -->
 <div id="program3Modal" class="modal">
     <div class="modal-content has-image">
         <span class="close-btn" onclick="closeModal('program3Modal')">&times;</span>
@@ -518,7 +515,6 @@
     </div>
 </div>
 
-<!-- Program 4 -->
 <div id="program4Modal" class="modal">
     <div class="modal-content has-image">
         <span class="close-btn" onclick="closeModal('program4Modal')">&times;</span>
@@ -534,7 +530,6 @@
     </div>
 </div>
 
-<!-- Why 1 -->
 <div id="why1Modal" class="modal">
     <div class="modal-content text-only">
         <span class="close-btn" onclick="closeModal('why1Modal')">&times;</span>
@@ -544,7 +539,6 @@
     </div>
 </div>
 
-<!-- Why 2 -->
 <div id="why2Modal" class="modal">
     <div class="modal-content text-only">
         <span class="close-btn" onclick="closeModal('why2Modal')">&times;</span>
@@ -554,7 +548,6 @@
     </div>
 </div>
 
-<!-- Why 3 -->
 <div id="why3Modal" class="modal">
     <div class="modal-content text-only">
         <span class="close-btn" onclick="closeModal('why3Modal')">&times;</span>
@@ -564,7 +557,6 @@
     </div>
 </div>
 
-<!-- Contact -->
 <div id="contactModal" class="modal">
     <div class="modal-content center-text">
         <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
@@ -575,7 +567,6 @@
     </div>
 </div>
 
-<!-- ═══════════════ SCRIPTS ═══════════════ -->
 <script>
     function openModal(id) { document.getElementById(id).style.display = 'block'; }
     function closeModal(id) { document.getElementById(id).style.display = 'none'; }
@@ -597,28 +588,25 @@
     }
 </script>
 
-<!-- ── GRID + CURSOR TRAIL SCRIPT ── -->
 <script>
 (function(){
+    /* ── GRID ── */
     const gridCanvas = document.getElementById('grid');
     const gridCtx    = gridCanvas.getContext('2d');
     const glowCanvas = document.getElementById('cursor-glow');
     const glowCtx    = glowCanvas.getContext('2d');
 
-    const GRID = 22;          /* smaller grid = more lines */
-    const TRAIL_MAX  = 28;    /* how many trail snapshots to keep */
-    const DECAY      = 0.88;  /* how fast each snapshot fades (per frame) */
+    const GRID = 11; /* denser grid */
 
     function resize() {
         gridCanvas.width  = glowCanvas.width  = window.innerWidth;
         gridCanvas.height = glowCanvas.height = window.innerHeight;
-        drawGrid();           /* redraw static grid on resize */
+        drawGrid();
     }
 
-    /* ── STATIC GRID (drawn once, or on resize) ── */
     function drawGrid() {
         gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
-        gridCtx.strokeStyle = 'rgba(56,189,248,0.055)';
+        gridCtx.strokeStyle = 'rgba(56,189,248,0.045)';
         gridCtx.lineWidth   = 0.5;
         for (let x = 0; x <= gridCanvas.width + GRID; x += GRID) {
             gridCtx.beginPath();
@@ -637,136 +625,80 @@
     resize();
     window.addEventListener('resize', resize);
 
-    /* ── MOUSE TRACKING ── */
-    let mx = -9999, my = -9999;
-    window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    /* ── PAINTBRUSH CURSOR ── */
+    /* Raw mouse target */
+    let targetX = -999, targetY = -999;
+
+    /* Smoothed "head" position (lerped toward target) */
+    let headX = -999, headY = -999;
+
+    /* Trail: array of {x, y, r, alpha} — historical positions */
+    const TRAIL_LEN   = 48;   /* number of trail dots */
+    const LERP        = 0.14; /* lower = smoother/laggier */
+    const HEAD_R      = 14;   /* radius of the leading circle */
+    const TAIL_R_MIN  = 2;    /* radius at the very end of the trail */
+
+    const trail = [];
+
+    window.addEventListener('mousemove', e => { targetX = e.clientX; targetY = e.clientY; });
     window.addEventListener('touchmove', e => {
-        mx = e.touches[0].clientX;
-        my = e.touches[0].clientY;
+        targetX = e.touches[0].clientX;
+        targetY = e.touches[0].clientY;
     }, { passive: true });
 
-    /*
-     * TRAIL — each entry is { col, row, life }
-     * col/row = grid cell index of the top-left corner of the 2×2 block
-     * life    = 1.0 → 0.0 (fades out)
-     *
-     * We store a Set of "col,row" strings that are already in the trail
-     * so we only push when the cursor has moved to a new cell.
-     */
-    const trail    = [];    /* [{col, row, life}, …] */
-    const inTrail  = new Set();
-
-    /* Snap cursor to the nearest grid cell (the cell that contains the cursor) */
-    function cellOf(px, py) {
-        return {
-            col: Math.floor(px / GRID),
-            row: Math.floor(py / GRID)
-        };
-    }
-
-    let lastCol = null, lastRow = null;
-
-    /* ── DRAW ONE TRAIL STEP ── */
-    /*
-     * Each step highlights a 2×2 block of cells (so 4 cells = a square
-     * made of 3×3 grid intersections).  The block is centred on whichever
-     * 2×2 patch of cells the cursor is inside.
-     */
-    function drawBlock(col, row, alpha) {
-        /* The 2×2 block occupies columns [col, col+1] × rows [row, row+1]
-           i.e. pixels x ∈ [col*GRID, (col+2)*GRID], y ∈ [row*GRID, (row+2)*GRID] */
-        const x = col * GRID;
-        const y = row * GRID;
-        const w = GRID * 2;
-        const h = GRID * 2;
-
-        /* filled rectangle — very subtle fill */
-        glowCtx.fillStyle = `rgba(56,189,248,${alpha * 0.07})`;
-        glowCtx.fillRect(x, y, w, h);
-
-        /* bright border of the 2×2 block */
-        glowCtx.strokeStyle = `rgba(56,189,248,${alpha * 0.55})`;
-        glowCtx.lineWidth   = 1.0;
-        glowCtx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
-
-        /* inner cross — the shared grid lines inside the 2×2 block */
-        glowCtx.strokeStyle = `rgba(56,189,248,${alpha * 0.30})`;
-        glowCtx.lineWidth   = 0.75;
-
-        /* vertical inner line */
-        glowCtx.beginPath();
-        glowCtx.moveTo(x + GRID, y);
-        glowCtx.lineTo(x + GRID, y + h);
-        glowCtx.stroke();
-
-        /* horizontal inner line */
-        glowCtx.beginPath();
-        glowCtx.moveTo(x,     y + GRID);
-        glowCtx.lineTo(x + w, y + GRID);
-        glowCtx.stroke();
-
-        /* corner dots at all 9 intersections of the 2×2 block */
-        for (let dc = 0; dc <= 2; dc++) {
-            for (let dr = 0; dr <= 2; dr++) {
-                const cx = x + dc * GRID;
-                const cy = y + dr * GRID;
-                glowCtx.beginPath();
-                glowCtx.arc(cx, cy, 2.0, 0, Math.PI * 2);
-                glowCtx.fillStyle = `rgba(148,230,255,${alpha * 0.85})`;
-                glowCtx.fill();
-            }
-        }
-    }
-
-    /* ── SOFT RADIAL GLOW behind the head of the trail ── */
-    function drawHeadGlow(col, row, alpha) {
-        const cx = col * GRID + GRID;   /* centre of the 2×2 block */
-        const cy = row * GRID + GRID;
-
-        const g = glowCtx.createRadialGradient(cx, cy, 0, cx, cy, GRID * 3.5);
-        g.addColorStop(0,   `rgba(56,189,248,${alpha * 0.18})`);
-        g.addColorStop(0.5, `rgba(30,144,255,${alpha * 0.07})`);
-        g.addColorStop(1,   'rgba(0,0,0,0)');
-        glowCtx.fillStyle = g;
-        glowCtx.fillRect(cx - GRID*3.5, cy - GRID*3.5, GRID*7, GRID*7);
-    }
-
-    /* ── MAIN LOOP ── */
     function loop() {
-        /* 1. Push a new trail snapshot if the cursor moved to a new cell */
-        if (mx > 0 && my > 0) {
-            const { col, row } = cellOf(mx - GRID * 0.5, my - GRID * 0.5);
-            /* offset by half a cell so the block is centred around the cursor */
-            const key = `${col},${row}`;
-            if (col !== lastCol || row !== lastRow) {
-                trail.push({ col, row, life: 1.0 });
-                inTrail.add(key);
-                lastCol = col; lastRow = row;
-                if (trail.length > TRAIL_MAX) {
-                    const old = trail.shift();
-                    inTrail.delete(`${old.col},${old.row}`);
-                }
-            }
-        }
+        /* Lerp head toward target */
+        headX += (targetX - headX) * LERP;
+        headY += (targetY - headY) * LERP;
 
-        /* 2. Decay all lives */
-        for (const snap of trail) snap.life *= DECAY;
+        /* Push current head to front of trail */
+        trail.unshift({ x: headX, y: headY });
+        if (trail.length > TRAIL_LEN) trail.pop();
 
-        /* 3. Clear glow canvas */
+        /* Clear glow canvas */
         glowCtx.clearRect(0, 0, glowCanvas.width, glowCanvas.height);
 
-        /* 4. Draw oldest → newest so head is on top */
-        for (let i = 0; i < trail.length; i++) {
-            const snap  = trail[i];
-            const alpha = snap.life;
-            if (alpha < 0.01) continue;
-            drawBlock(snap.col, snap.row, alpha);
+        if (targetX < 0) { requestAnimationFrame(loop); return; }
+
+        /* Draw trail from tail → head so head paints on top */
+        for (let i = trail.length - 1; i >= 0; i--) {
+            const t     = i / (TRAIL_LEN - 1);          /* 0 = head, 1 = tail */
+            const alpha = Math.pow(1 - t, 1.6) * 0.72;  /* fade toward tail */
+            const r     = TAIL_R_MIN + (HEAD_R - TAIL_R_MIN) * Math.pow(1 - t, 1.2);
+
+            const pt = trail[i];
+
+            /* Soft outer glow */
+            const grad = glowCtx.createRadialGradient(pt.x, pt.y, 0, pt.x, pt.y, r * 3.5);
+            grad.addColorStop(0,   `rgba(56,189,248,${alpha * 0.22})`);
+            grad.addColorStop(0.5, `rgba(30,144,255,${alpha * 0.08})`);
+            grad.addColorStop(1,   'rgba(0,0,0,0)');
+            glowCtx.beginPath();
+            glowCtx.arc(pt.x, pt.y, r * 3.5, 0, Math.PI * 2);
+            glowCtx.fillStyle = grad;
+            glowCtx.fill();
+
+            /* Solid core circle */
+            glowCtx.beginPath();
+            glowCtx.arc(pt.x, pt.y, r, 0, Math.PI * 2);
+            glowCtx.fillStyle = `rgba(148,230,255,${alpha * 0.85})`;
+            glowCtx.fill();
         }
 
-        /* 5. Extra glow at the head */
+        /* Ring outline on the very head */
         if (trail.length > 0) {
-            const head = trail[trail.length - 1];
-            drawHeadGlow(head.col, head.row, head.life);
+            const h = trail[0];
+            glowCtx.beginPath();
+            glowCtx.arc(h.x, h.y, HEAD_R + 4, 0, Math.PI * 2);
+            glowCtx.strokeStyle = 'rgba(56,189,248,0.55)';
+            glowCtx.lineWidth   = 1.2;
+            glowCtx.stroke();
+
+            /* Tiny bright dot in center */
+            glowCtx.beginPath();
+            glowCtx.arc(h.x, h.y, 2.5, 0, Math.PI * 2);
+            glowCtx.fillStyle = 'rgba(255,255,255,0.95)';
+            glowCtx.fill();
         }
 
         requestAnimationFrame(loop);
