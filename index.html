@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        @media (pointer: coarse) {
+    body { cursor: auto !important; }
+}
         html {
             font-size: 25px;
         }
@@ -790,6 +793,9 @@
 
 <script>
 (function(){
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    /* ── GRID ── */
     /* ── GRID ── */
     const gridCanvas = document.getElementById('grid');
     const gridCtx    = gridCanvas.getContext('2d');
